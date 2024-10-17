@@ -22,23 +22,38 @@ function TaskDetailsPage() {
   return (
     <div>
       <h1 className="p2 font-bold text-xl text-left my-10"> Task Details</h1>
-      <div className="flex justify-between items-center p-2 border rounded w-5/6 text-xl ">
-        {taskSummary && (
-          <>
-            <h1 className="text-left">{taskSummary.taskName}</h1>
-            <p className="text-left">Date Due: {taskSummary.dueDate}</p>
-            <p>
-              <span font-bold>Date Completed: </span>
-              {taskSummary.dateComplete}
-            </p>
-            <span>
-              Priority: <span>{prioLabel(taskSummary.prio)}</span>
-            </span>
-            <p>Additional Labels: {taskSummary.additionalLabels}</p>
-            <p>Task Completed? {taskSummary.completed}</p>
-            <button className="deleteButton">Delete</button>
-          </>
-        )}
+      <div className="flex flex-wrap text-stone-700 ">
+        <div className="p-2 border rounded w-5/6 text-xl bg-white ">
+          {taskSummary && (
+            <>
+              <h1 className="text-left text-2xl mb-12 font-bold">
+                {taskSummary.taskName}
+              </h1>
+              <p className="text-left my-2">
+                <span className="font-bold">Date Due:</span>{" "}
+                {taskSummary.dueDate}
+              </p>
+              <p className="text-left my-2">
+                <span className="font-bold">Date Completed: </span>
+                {taskSummary.dateComplete}
+              </p>
+              <p className="text-left my-2">
+                {" "}
+                <span className="font-bold">Priority: </span>
+                {prioLabel(taskSummary.prio)}
+              </p>
+
+              <p className="text-left my-2">
+                <span className="font-bold">Additional Labels: </span>
+                {taskSummary.additionalLabels}
+              </p>
+              {/*
+              <p>Task Completed? {taskSummary.completed}</p>
+              */}
+              <button className="deleteButton">Delete</button>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
