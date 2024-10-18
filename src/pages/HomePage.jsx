@@ -13,13 +13,14 @@ function HomePage() {
   const [dueDate, setDueDate] = useState(null);
   const [dateComplete, setDateComplete] = useState(null);
   const [prio, setPrio] = useState("");
-  const [additionalLabels, setAdditionalLabels] = useState("");
+  const [additionalLabels, setAdditionalLabels] = useState([]);
 
   const handletaskNameInput = (e) => setTaskName(e.target.value);
   const handlePrioInput = (e) => setPrio(e.target.value);
   const handleDueDate = (date) => {
     setDueDate(date);
   };
+  const handleAdditionalLabelInput = (e) => setAdditionalLabels(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,6 +28,7 @@ function HomePage() {
       taskName,
       dueDate,
       prio,
+      additionalLabels,
     };
     addNewTask(newTask);
     console.log("Submitted: ", newTask);
@@ -48,8 +50,25 @@ function HomePage() {
     setTasks(filteredTasks);
   };
 
+  const completeTask = (taskId) => {
+    console.log(completed);
+
+    setCompleted(!completed);
+  };
+
+  /*
+  const completeTask = (taskId) => {
+    console.log(taskId);
+    const filteredTasks = tasks.filter((task) => {
+      return task.taskName !== taskId;
+    });
+
+    setTasks(filteredTasks);
+  };
+  */
+
   return (
-    <div>
+    <>
       <div className="formContainer">
         <form onSubmit={handleSubmit}>
           <span>Add a Task</span>
@@ -88,6 +107,17 @@ function HomePage() {
               </select>
             </label>
 
+            <label>
+              Additional Labels
+              <input
+                name="additionalLabels"
+                type="text"
+                placeholder="Add additional tags comma separated"
+                value={additionalLabels}
+                onChange={handleAdditionalLabelInput}
+              />
+            </label>
+
             <label>Due Date</label>
             <div className="datePicker">
               <DatePicker
@@ -110,11 +140,16 @@ function HomePage() {
       {tasks &&
         tasks.map((task) => {
           return (
-            <TaskList key={task.taskName} {...task} deleteTask={deleteTask} />
+            <TaskList
+              key={task.taskName}
+              {...task}
+              deleteTask={deleteTask}
+              completeTask={completeTask}
+            />
           );
         })}
       <div className="mb-10"></div>
-    </div>
+    </>
   );
 }
 

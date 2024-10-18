@@ -22,6 +22,15 @@ function App() {
   const [prio, setPrio] = useState("");
   const [additionalLabels, setAdditionalLabels] = useState("");
 
+  const deleteTask = (taskId) => {
+    console.log(taskId);
+    const filteredTasks = tasks.filter((task) => {
+      return task.taskName !== taskId;
+    });
+
+    setTasks(filteredTasks);
+  };
+
   return (
     <>
       <div>
@@ -29,9 +38,12 @@ function App() {
         <Sidebar />
 
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage className="Homepage" />} />
           <Route path="/about" element={<About />} />
-          <Route path="/task/:taskName" element={<TaskDetailsPage />} />
+          <Route
+            path="/task/:taskName"
+            element={<TaskDetailsPage deleteTask={deleteTask} />}
+          />
         </Routes>
         <Footer />
       </div>

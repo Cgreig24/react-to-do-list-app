@@ -5,54 +5,54 @@
     "dueDate": "10/18/2024",
     "dateComplete": "2024-10-14",
     "prio": "Medium",
-    "additionalLabels": null
+    "additionalLabels": ["Prep"]
   },
   {
     "taskName": "Create a project repository",
-    "completed": false,
+    "completed": true,
     "dueDate": "10/18/2024",
     "dateComplete": "2024-10-14",
     "prio": "Medium",
-    "additionalLabels": null
+    "additionalLabels": []
   },
   {
     "taskName": "Create React application using Vite",
-    "completed": false,
+    "completed": true,
     "dueDate": "10/18/2024",
     "dateComplete": "2024-10-14",
     "prio": "Low",
-    "additionalLabels": null
+    "additionalLabels": []
   },
   {
     "taskName": "Finish Day 1 Development Tasks",
-    "completed": false,
+    "completed": true,
     "dueDate": "10/18/2024",
     "dateComplete": "2024-10-14",
     "prio": "Medium",
-    "additionalLabels": null
+    "additionalLabels": ["NavBar", "Footer", "Styling"]
   },
   {
     "taskName": "Finish Day 1 Research Tasks",
     "completed": false,
     "dueDate": "10/18/2024",
-    "dateComplete": "2024-10-14",
+    "dateComplete": "",
     "prio": "Low",
-    "additionalLabels": null
+    "additionalLabels": ["Reading"]
   },
   {
     "taskName": "Finish Day 2 Development Tasks",
     "completed": false,
     "dueDate": "10/18/2024",
-    "dateComplete": "2024-10-14",
+    "dateComplete": "",
     "prio": "High",
-    "additionalLabels": null
+    "additionalLabels": ["Routing", "Initial Data"]
   },
   {
     "taskName": "Finish Day 2 Research Tasks",
     "completed": false,
     "dueDate": "10/18/2024",
-    "dateComplete": "2024-10-14",
+    "dateComplete": "",
     "prio": "Low",
-    "additionalLabels": null
+    "additionalLabels": ["Reading"]
   }
 ]

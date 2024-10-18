@@ -8,6 +8,7 @@ function TaskList({
   prio,
   additionalLabels,
   deleteTask,
+  completeTask,
 }) {
   function prioLabel(prio) {
     if (prio == "Low") {
@@ -19,26 +20,56 @@ function TaskList({
     }
   }
 
+  function completedLabel(completed) {
+    if (completed == true) {
+      return (
+        <button onClick={() => completeTask(completed)} className="DoneButton">
+          Done
+        </button>
+      );
+    } else {
+      return (
+        <button
+          onClick={() => completeTask(completed)}
+          className="NotDoneButton"
+        >
+          Not Done
+        </button>
+      );
+    }
+  }
+
   return (
-    <Link to={`/task/${taskName}`}>
-      <div className="flex justify-between items-center p-2 border rounded-md w-5/6 text-lg">
-        <span style={{ flexBasis: "16%" }}>{taskName}</span>
-        <span style={{ flexBasis: "16%" }}>{completed ? "✅" : "⬜️"}</span>
+    <>
+      {/*<span style={{ flexBasis: "16%" }}>{completed ? "✅" : "⬜️"}</span>*/}
+      <div className="flex justify-between items-center p-2 border rounded-md w-5/6 text-lg ">
+        <Link to={`/task/${taskName}`}>
+          <span className="taskNameTable">{taskName}</span>
+        </Link>
+        <span style={{ flexBasis: "16%" }}>{completedLabel(completed)}</span>
+        <span>{completed}</span>
         <span style={{ flexBasis: "16%" }}>
           {new Date(dueDate).toLocaleDateString()}
         </span>
         <span style={{ flexBasis: "16%" }}>
-          {new Date(dateComplete).toLocaleDateString()}
+          {dateComplete ? new Date(dateComplete).toLocaleDateString() : ""}
         </span>
         <span style={{ flexBasis: "16%" }}>{prioLabel(prio)}</span>
-        <span style={{ flexBasis: "16%" }}>{additionalLabels}</span>
+        <span style={{ flexBasis: "16%" }}>
+          {/*{additionalLabels ? additionalLabels.join(", ") : ""}
+           */}
+          {additionalLabels.length > 1
+            ? additionalLabels.toString()
+            : additionalLabels}
+        </span>
+
         <span style={{ flexBasis: "16%" }}>
           <button onClick={() => deleteTask(taskName)} className="deleteButton">
             Delete
           </button>
         </span>
       </div>
-    </Link>
+    </>
   );
 }
 
