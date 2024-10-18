@@ -14,22 +14,29 @@ import HomePage from "./pages/HomePage";
 import TaskDetailsPage from "./pages/TaskDetails";
 
 function App() {
-  const [tasks, setTasks] = useState(taskListData);
-  const [taskName, setTaskName] = useState("");
-  const [completed, setCompleted] = useState(false);
-  const [dueDate, setDueDate] = useState(null);
-  const [dateComplete, setDateComplete] = useState(null);
-  const [prio, setPrio] = useState("");
-  const [additionalLabels, setAdditionalLabels] = useState("");
+  // const [tasks, setTasks] = useState(taskListData);
+  // const [taskName, setTaskName] = useState("");
+  // const [completed, setCompleted] = useState(false);
+  // const [dueDate, setDueDate] = useState(null);
+  // const [dateComplete, setDateComplete] = useState(null);
+  // const [prio, setPrio] = useState("");
+  // const [additionalLabels, setAdditionalLabels] = useState("");
+
+  // const deleteTask = (taskId) => {
+  //   const filteredTasks = tasks.filter((task) => {
+  //     return task.taskName !== taskId;
+  //   });
+
+  //   setTasks(filteredTasks);
+  // };
 
   return (
     <>
       <div>
         <Navbar />
         <Sidebar />
-
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage className="Homepage" />} />
           <Route path="/about" element={<About />} />
           <Route path="/task/:taskName" element={<TaskDetailsPage />} />
         </Routes>

@@ -31,13 +31,21 @@ body {
   background-color: rgba(31, 3, 56, 0.797);
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 120vh;
+}
+
+.Homepage {
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 25px 35px;
+  padding-bottom: 30px;
+  min-height: calc(100vh -60px -50px);
 }
 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.3em 1em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -112,7 +120,7 @@ form {
   border-radius: 0.5rem; /* Rounded corners for the card */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the card */
   background-color: #1a1a1a;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 form span {
@@ -163,8 +171,21 @@ button[type="submit"]:hover {
 }
 
 .tasksHeader {
-  font-size: 45px;
+  font-size: 35px;
   margin-bottom: 20px;
+}
+
+.taskNameTable {
+  display: block;
+  width: 235px;
+}
+
+.NotDoneButton {
+  background-color: rgb(58, 57, 57);
+}
+
+.DoneButton {
+  background-color: rgb(40, 165, 214);
 }
 
 .lowPrio {
@@ -188,12 +209,14 @@ button[type="submit"]:hover {
 }
 
 .footer {
-  margin-top: 20px;
-  position: fixed;
+  margin-top: auto;
+  /* position: absolute; */
+  bottom: 0;
   display: flex;
   justify-content: center;
+
   left: 0;
-  bottom: 0;
+
   width: 100%;
   text-align: center;
 }
