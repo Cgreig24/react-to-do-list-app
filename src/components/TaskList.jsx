@@ -21,22 +21,14 @@ function TaskList({
   }
 
   function completedLabel(completed) {
-    if (completed == true) {
-      return (
-        <button onClick={() => completeTask(completed)} className="DoneButton">
-          Done
-        </button>
-      );
-    } else {
-      return (
-        <button
-          onClick={() => completeTask(completed)}
-          className="NotDoneButton"
-        >
-          Not Done
-        </button>
-      );
-    }
+    return (
+      <button
+        onClick={() => completeTask(taskName)}
+        className={completed ? "DoneButton" : "NotDoneButton"}
+      >
+        {completed ? "Done" : "Not Done"}
+      </button>
+    );
   }
 
   return (

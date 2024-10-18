@@ -176,7 +176,8 @@ button[type="submit"]:hover {
 }
 
 .taskNameTable {
-  width: 10px;
+  display: block;
+  width: 235px;
 }
 
 .NotDoneButton {
@@ -209,7 +210,7 @@ button[type="submit"]:hover {
 
 .footer {
   margin-top: auto;
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   display: flex;
   justify-content: center;

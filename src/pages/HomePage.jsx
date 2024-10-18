@@ -46,26 +46,28 @@ function HomePage() {
     const filteredTasks = tasks.filter((task) => {
       return task.taskName !== taskId;
     });
-
     setTasks(filteredTasks);
   };
 
-  const completeTask = (taskId) => {
-    console.log(completed);
-
-    setCompleted(!completed);
-  };
-
-  /*
-  const completeTask = (taskId) => {
-    console.log(taskId);
-    const filteredTasks = tasks.filter((task) => {
-      return task.taskName !== taskId;
+  const completeTask = (taskName) => {
+    const tasksCopy = [...tasks];
+    tasks.forEach((task, index) => {
+      if (task.taskName === taskName) {
+        tasksCopy[index].completed = !task.completed;
+      }
     });
-
-    setTasks(filteredTasks);
+    setTasks(tasksCopy);
+    // setCompleted(!completed);
+    // console.log(completed, "outside");
   };
-  */
+
+  // const completeTask = (taskId) => {
+  //   console.log(taskId);
+  //   const filteredTasks = tasks.filter((task) => {
+  //     return task.taskName !== taskId;
+  //   });
+  //   setTasks(filteredTasks);
+  // };
 
   return (
     <>
